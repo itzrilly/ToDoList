@@ -17,7 +17,7 @@ struct TaskCell: View {
     
     let name: String
     let priority: Priority
-    var isDone: Bool
+    @State var isDone: Bool = false
     
     private var flagColor: Color {
         switch priority {
@@ -51,8 +51,8 @@ struct TaskCell: View {
 struct TaskCellView_Previews: PreviewProvider {
     static var previews: some View {
         Group {
-            TaskCell(name: "Preview task", priority: .normal, isDone: false)
-            TaskCell(name: "Preview task", priority: .hight, isDone: true)
+            TaskCell(name: "Preview task", priority: .normal)
+            TaskCell(name: "Preview task", priority: .hight)
         }
         .previewLayout(.sizeThatFits)
     }
