@@ -17,7 +17,7 @@ struct TaskCell: View {
     
     let name: String
     let priority: Priority
-    let isDone: Bool
+    var isDone: Bool
     
     private var flagColor: Color {
         switch priority {
@@ -38,7 +38,11 @@ struct TaskCell: View {
                     .foregroundColor(flagColor)
             }
             Spacer()
-            Image(systemName: isDone ? "circle.inset.filled" : "circle")
+            Button {
+                isDone.toggle()
+            } label: {
+                Image(systemName: isDone ? "circle.inset.filled" : "circle")
+            }
         }
         .padding()
     }
