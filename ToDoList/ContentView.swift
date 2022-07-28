@@ -8,9 +8,14 @@
 import SwiftUI
 
 struct ContentView: View {
+    
+    var taskIsDone = false
+    
     var body: some View {
-        Text("Hello, world!")
-            .padding()
+        VStack {
+            TaskCell(name: "Test task", priority: .low, isDone: taskIsDone)
+            Text(taskIsDone ? "Tâche effectuée" : "Tâche à faire")
+        }
     }
 }
 
