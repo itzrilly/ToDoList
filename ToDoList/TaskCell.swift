@@ -7,20 +7,12 @@
 
 import SwiftUI
 
-enum Priority {
-    case hight
-    case normal
-    case low
-}
-
 struct TaskCell: View {
     
-    let name: String
-    let priority: Priority
-    @Binding var isDone: Bool
+    var task: Task
     
     private var flagColor: Color {
-        switch priority {
+        switch task.priority {
             case .hight:
                 return .red
             case .normal:
@@ -33,15 +25,15 @@ struct TaskCell: View {
     var body: some View {
         HStack {
             VStack (alignment: .leading, spacing: 8) {
-                Text(name)
+                Text(task.name)
                 Image(systemName: "flag.fill")
                     .foregroundColor(flagColor)
             }
             Spacer()
             Button {
-                isDone.toggle()
+                task.isDone.toggle()
             } label: {
-                Image(systemName: isDone ? "circle.inset.filled" : "circle")
+                Image(systemName: task.isDone ? "circle.inset.filled" : "circle")
                     .imageScale(.large)
                     .foregroundColor(.black)
             }
@@ -51,10 +43,15 @@ struct TaskCell: View {
 }
 
 struct TaskCellView_Previews: PreviewProvider {
+    
+    static let task1 = Task(name: "Preview task", priority: .normal, isDone: false)
+    
+    static let task2 = Task(name: "Preview task 2", priority: .hight, isDone: true)
+    
     static var previews: some View {
         Group {
-            TaskCell(name: "Preview task", priority: .normal, isDone: .constant(false))
-            TaskCell(name: "Preview task", priority: .hight, isDone: .constant(true))
+            TaskCell(task: task1)
+            TaskCell(task: task2)
         }
         .previewLayout(.sizeThatFits)
     }

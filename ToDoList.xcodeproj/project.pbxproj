@@ -16,6 +16,7 @@
 		CEBF169F289B0290000F536F /* TestBinding.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEBF169E289B0290000F536F /* TestBinding.swift */; };
 		CEBF16A1289B055E000F536F /* TestDescription.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEBF16A0289B055E000F536F /* TestDescription.swift */; };
 		CEBF16A3289B10AC000F536F /* TestItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEBF16A2289B10AC000F536F /* TestItem.swift */; };
+		CEBF16A5289B1A14000F536F /* Task.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEBF16A4289B1A14000F536F /* Task.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -29,6 +30,7 @@
 		CEBF169E289B0290000F536F /* TestBinding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestBinding.swift; sourceTree = "<group>"; };
 		CEBF16A0289B055E000F536F /* TestDescription.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestDescription.swift; sourceTree = "<group>"; };
 		CEBF16A2289B10AC000F536F /* TestItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestItem.swift; sourceTree = "<group>"; };
+		CEBF16A4289B1A14000F536F /* Task.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Task.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,6 +66,7 @@
 				CE2B232828928AFB00AFE2C7 /* ToDoListApp.swift */,
 				CE2B232A28928AFB00AFE2C7 /* ContentView.swift */,
 				CE2B233628928D4C00AFE2C7 /* TaskCell.swift */,
+				CEBF16A4289B1A14000F536F /* Task.swift */,
 				CE2B23382892994700AFE2C7 /* TestStateView.swift */,
 				CEBF169E289B0290000F536F /* TestBinding.swift */,
 				CEBF16A0289B055E000F536F /* TestDescription.swift */,
@@ -152,6 +155,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CEBF16A5289B1A14000F536F /* Task.swift in Sources */,
 				CEBF16A3289B10AC000F536F /* TestItem.swift in Sources */,
 				CE2B232B28928AFB00AFE2C7 /* ContentView.swift in Sources */,
 				CE2B232928928AFB00AFE2C7 /* ToDoListApp.swift in Sources */,
