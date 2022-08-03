@@ -17,7 +17,7 @@ struct TaskCell: View {
     
     let name: String
     let priority: Priority
-    @State var isDone: Bool = false
+    @Binding var isDone: Bool
     
     private var flagColor: Color {
         switch priority {
@@ -42,6 +42,8 @@ struct TaskCell: View {
                 isDone.toggle()
             } label: {
                 Image(systemName: isDone ? "circle.inset.filled" : "circle")
+                    .imageScale(.large)
+                    .foregroundColor(.black)
             }
         }
         .padding()
@@ -51,8 +53,8 @@ struct TaskCell: View {
 struct TaskCellView_Previews: PreviewProvider {
     static var previews: some View {
         Group {
-            TaskCell(name: "Preview task", priority: .normal)
-            TaskCell(name: "Preview task", priority: .hight)
+            TaskCell(name: "Preview task", priority: .normal, isDone: .constant(false))
+            TaskCell(name: "Preview task", priority: .hight, isDone: .constant(true))
         }
         .previewLayout(.sizeThatFits)
     }

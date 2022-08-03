@@ -9,11 +9,11 @@ import SwiftUI
 
 struct ContentView: View {
     
-    var taskIsDone = false
+    @State private var taskIsDone = false
     
     var body: some View {
         VStack {
-            TaskCell(name: "Test task", priority: .low, isDone: taskIsDone)
+            TaskCell(name: "Test task", priority: .low, isDone: $taskIsDone)
             Text(taskIsDone ? "Tâche effectuée" : "Tâche à faire")
         }
     }
