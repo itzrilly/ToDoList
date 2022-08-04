@@ -14,7 +14,8 @@ enum Priority {
     
 }
 
-class Task: ObservableObject {
+class Task: ObservableObject, Identifiable {
+    let id = UUID()
     let name: String
     let priority: Priority
     @Published var isDone: Bool

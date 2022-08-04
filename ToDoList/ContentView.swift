@@ -9,12 +9,11 @@ import SwiftUI
 
 struct ContentView: View {
         
-    @StateObject var task = Task(name: "Test task")
+    @StateObject var taskList = TaskList(owner: "Quentin")
     
     var body: some View {
-        VStack {
+        List(taskList.tasks) { task in
             TaskCell(task: task)
-            Text(task.isDone ? "Tâche effectuée" : "Tâche à faire")
         }
     }
 }
