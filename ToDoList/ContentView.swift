@@ -12,8 +12,15 @@ struct ContentView: View {
     @StateObject var taskList = TaskList(owner: "Quentin")
     
     var body: some View {
-        List(taskList.tasks) { task in
-            TaskCell(task: task)
+        NavigationView {
+            List(taskList.tasks) { task in
+                NavigationLink {
+                    PriorityView(selectedPriority: $task.priority)
+                } label: {
+                    TaskCell(task: task)
+                }
+            }
+            .navigationTitle("My Tasks")
         }
     }
 }
