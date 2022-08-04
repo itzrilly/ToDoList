@@ -14,8 +14,14 @@ enum Priority {
     
 }
 
-struct Task {
+class Task: ObservableObject {
     let name: String
     let priority: Priority
-    var isDone: Bool
+    @Published var isDone: Bool
+    
+    init(name: String, priority: Priority = .normal, isDone: Bool = false){
+        self.name = name
+        self.priority = priority
+        self.isDone = isDone
+    }
 }

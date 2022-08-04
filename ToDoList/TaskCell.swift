@@ -9,7 +9,7 @@ import SwiftUI
 
 struct TaskCell: View {
     
-    @Binding var task: Task
+    @ObservedObject var task: Task
     
     private var flagColor: Color {
         switch task.priority {
@@ -44,13 +44,13 @@ struct TaskCell: View {
 
 struct TaskCellView_Previews: PreviewProvider {
     
-    @State static var task1 = Task(name: "Preview task", priority: .normal, isDone: false)
-    @State static var task2 = Task(name: "Preview task 2", priority: .hight, isDone: true)
+    @StateObject static var task1 = Task(name: "Preview task", priority: .normal, isDone: false)
+    @StateObject static var task2 = Task(name: "Preview task 2", priority: .hight, isDone: true)
     
     static var previews: some View {
         Group {
-            TaskCell(task: $task1)
-            TaskCell(task: $task2)
+            TaskCell(task: task1)
+            TaskCell(task: task2)
         }
         .previewLayout(.sizeThatFits)
     }
