@@ -15,7 +15,7 @@ struct ContentView: View {
         NavigationView {
             List(taskList.tasks) { task in
                 NavigationLink {
-                    PriorityView(selectedPriority: $task.priority)
+                    PriorityView(task: task)
                 } label: {
                     TaskCell(task: task)
                 }

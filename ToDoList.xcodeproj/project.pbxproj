@@ -71,6 +71,7 @@
 				CE2B232A28928AFB00AFE2C7 /* ContentView.swift */,
 				CE2B233628928D4C00AFE2C7 /* TaskCell.swift */,
 				CEBF16A4289B1A14000F536F /* Task.swift */,
+				CE8A5684289BC471005327FD /* PriorityView.swift */,
 				CE8A5682289BB469005327FD /* TaskList.swift */,
 				CE2B23382892994700AFE2C7 /* TestStateView.swift */,
 				CEBF169E289B0290000F536F /* TestBinding.swift */,
@@ -78,7 +79,6 @@
 				CEBF16A2289B10AC000F536F /* TestItem.swift */,
 				CE2B232C28928AFF00AFE2C7 /* Assets.xcassets */,
 				CE2B232E28928AFF00AFE2C7 /* Preview Content */,
-				CE8A5684289BC471005327FD /* PriorityView.swift */,
 			);
 			path = ToDoList;
 			sourceTree = "<group>";

@@ -9,19 +9,19 @@ import SwiftUI
 
 struct PriorityView: View {
     
-    @Binding var selectedPriority: Priority
+    @ObservedObject var task: Task
     
     var body: some View {
-        Picker(selection: .constant(2), label: Text("Priorité")) {
+        Picker(selection: $task.priority, label: Text("Priorité")) {
             Image(systemName: "flag.fill")
                 .foregroundColor(.blue)
-                .tag(1)
+                .tag(Priority.low)
             Image(systemName: "flag.fill")
                 .foregroundColor(.orange)
-                .tag(2)
+                .tag(Priority.normal)
             Image(systemName: "flag.fill")
                 .foregroundColor(.red)
-                .tag(3)
+                .tag(Priority.hight)
         }
         .pickerStyle(InlinePickerStyle())
     }
@@ -29,9 +29,9 @@ struct PriorityView: View {
 
 struct PriorityView_Previews: PreviewProvider {
     
-    @State static var testPriority = Priority.normal
+    @StateObject static var testTask = Task(name: "Quentin")
     
     static var previews: some View {
-        PriorityView(selectedPriority: $testPriority)
+        PriorityView(task: testTask)
     }
 }
